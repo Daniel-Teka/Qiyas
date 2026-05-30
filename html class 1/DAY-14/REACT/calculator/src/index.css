@@ -109,17 +109,3 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-
-/* src/index.css */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
