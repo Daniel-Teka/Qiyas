@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mark=90;
+        let x=15;
+        let y=10;
+        let z=10;
+// first
+        if (x>y && x>z){
+            console.log("X is max");
+        }
+        else if(x>y && y>z){
+            console.log("Y is max");
+        }
+        else if (z>x && z>y){
+            console.log("Z is max");
+        }
+        else {
+            console.log("All are EQALL");
+        }
+// second
+        if(x>y){
+            console.log("True");
+        }
+        else{
+            console.log("False")
+        }
+// third
+        if(x>y){
+            console.log("True");
+        }
+        else if (x>y){
+            console.log("X is less than Y")
+        }
+        else {
+            console.log("x and y are equal")
+        }
+// forth
+        if(mark>90 && mark<100){
+            console.log("A");
+        }
+        else if(mark>80 && mark<90){
+            console.log("B");
+        }
+        else if(mark<80 && mark>70){
+            console.log("C");
+        }
+        else{
+            console.log("D");
+        }
+
+        let Fruits=["Appple", "Mango","Cherry","Banana","Orange"];
+        console.log("Fruits count: "+Fruits.length);
+        console.log("Before Update: "+Fruits);
+        Fruits[0]="Avocado";
+        Fruits[1]="Menderin";
+        Fruits[2]="lemmon";
+        Fruits[3]="Ananas";
+        Fruits[4]="Papaya";
+        console.log("After Updating: "+Fruits);
+// arry method
+        let reverse=Fruits.reverse();
+        console.log("Revers Arry: "+reverse);
+// add or remove items
+        //
+// push add item at end position
+//        let newfFruits=(Fruits.push("Lemmon"));
+//        console.log(newfFruits[5]);
+        Fruits.push("Lemmon");
+        console.log("New Arry: "+Fruits)
+// Pop remove items from end
+        Fruits.pop();
+        console.log("After pop: "+Fruits)
+// unshift Add item at begnning
+        Fruits.unshift('Ananas');
+        console.log("Unshift Add At Begnning: "+Fruits);
+
+// Shift Remove Items from thhe Beginning
+        Fruits.shift();
+        console.log("First Item removed: "+Fruits);
+// splice Add items at specific position
+        Fruits.splice(2,1,"Kazmir");
+        console.log("Add on [2] remove [1]:"+Fruits)
+// Slice Not modifyig
+        let newf=Fruits.slice(1,4);
+        console.log("sliced: "+newf);
+
+    </script>
+</body>
+</html>

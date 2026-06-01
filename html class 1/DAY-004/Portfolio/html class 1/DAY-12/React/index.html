@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- React App -->
+    <div id="root"></div>
+    <!-- React JS -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel JS -->
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+    <!-- React Code -->
+    <script type="text/babel">
+        function App() {
+            return (
+                <div>
+                    <h1>Hello, React!</h1>
+                    <p>This is a simple React application.</p>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+        
+        // This code defines a simple React component called App that renders a heading and a paragraph. The ReactDOM.render() method is used to render the App component into the DOM element with the id of 'root'.
+
+        // Example of a Video component that takes a video object as a prop and renders its details
+        function Video({ video }) {
+  return (
+    <div>
+      <Thumbnail video={video} />
+      <a href={video.url}>
+        <h3>{video.title}</h3>
+        <p>{video.description}</p>
+      </a>
+      <LikeButton video={video} />
+    </div>
+  );
+}
+    </script>
+
+    <video src=""></video>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="grade.js" defer></script>
+</head>
+<body>
+    <h1>Student Grade Report</h1>
+<input type="text" id="studentId" placeholder="Student ID"><br>
+<input type="text" id="studentName" placeholder="Student Name"><br>
+
+<select id="course"><br>
+  <option value="Math">Math</option><br>
+  <option value="Science">Science</option><br>
+</select><br>
+
+<input type="number" id="assignment" placeholder="Assignment (Max 30)"><br>
+<input type="number" id="final" placeholder="Final (Max 50)"><br>
+<input type="number" id="test" placeholder="Test (Max 20)"><br>
+
+<button onclick="calculateGrade()">Calculate</button><br>
+
+<div id="result"></div>
+
+<ul id="historyList"></ul>
+
+<img src="#" alt="place jho">
+
+
+
+</body>
+</html>

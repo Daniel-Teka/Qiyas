@@ -1,0 +1,29 @@
+/*New file */
+h2{
+    font-family: arial;
+    font-style:italic;
+    text-shadow: 20px 20px 20px rgb(255, 0, 0);
+    width: 10px;
+}
+body{
+    background-color:whitesmoke;
+}
+*{
+    margin: 0;
+}
+.st {
+    /*color: red;*/
+}
+#title {
+    /*color: red;*/
+    background-color: #814d4d;
+}
+.sectiona{
+    color:rgb(255, 252, 252);
+}
+.sectionb{
+    color: #000;
+}
+div h2{
+    background-color: #090909;
+}

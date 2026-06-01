@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .main {
+            color: #fff;
+            background-color: rgb(58, 148, 148);
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h3 {
+            text-align: center;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], 
+        input[type="number"], 
+        input[type="email"], 
+        input[type="date"], 
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* padding መጠኑን እንዳያበላሸው */
+        }
+        .checkbox-group, .radio-group {
+            margin-top: 15px;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <h3>Student Registration Form</h3>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" placeholder="911223344" required min="900000000">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="example@mail.com">
+
+            <label for="birth">Date of Birth:</label>
+            <input type="date" id="birth" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required placeholder="10-50" min="10" max="50">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
+
+            <div class="checkbox-group">
+                <p>Languages:</p>
+                <input type="checkbox" name="Language" value="English"> English
+                <input type="checkbox" name="Language" value="Amharic"> Amharic
+            </div>
+
+            <div class="radio-group">
+                <p>Gender:</p>
+                <input type="radio" name="Gender" value="Male" id="male"> <label style="display:inline" for="male">Male</label>
+                <input type="radio" name="Gender" value="Female" id="female"> <label style="display:inline" for="female">Female</label>
+            </div>
+
+            <label for="gender-select">Select Department:</label>
+            <select name="dept" id="gender-select">
+                <option value="it">Information Technology</option>
+                <option value="eng">Engineering</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

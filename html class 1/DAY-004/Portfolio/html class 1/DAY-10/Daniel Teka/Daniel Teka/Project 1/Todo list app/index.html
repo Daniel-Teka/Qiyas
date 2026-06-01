@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks - Daily Note Tracer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <main class="todo-container">
+            <header class="todo-header">
+                <h1>My Tasks</h1>
+                <p id="current-date">Tuesday, May 19</p>
+            </header>
+
+            <form id="todo-form" class="todo-input-group">
+                <input 
+                    type="text" 
+                    id="todo-input" 
+                    placeholder="Add a new task..." 
+                    required 
+                    autocomplete="off"
+                >
+                <button type="submit" aria-label="Add task">+</button>
+            </form>
+
+            <ul id="todo-list" class="todo-list">
+                </ul>
+
+            <footer class="todo-footer">
+                <span id="task-count">0 tasks left</span>
+                <button id="clear-completed" class="clear-btn">Clear Completed</button>
+            </footer>
+        </main>
+
+        <section class="history-container" id="history-section">
+            <h2>Completed History</h2>
+            <div id="history-list" class="history-list">
+                </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

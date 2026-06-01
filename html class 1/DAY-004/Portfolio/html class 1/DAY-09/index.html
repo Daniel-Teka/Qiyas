@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="grade.js" defer></script>
+    <style>
+        *{
+            margin: 0.2%;
+            padding: 0.3%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Grading System</h3>
+<label for="S-id">Student ID</label>
+<input type="text" name="S-id" id="S-id" placeholder="Student ID"><br>
+<label for="S-name">Student Name</label>
+<input type="text" name="S-name" id="S=S-name" placeholder="student Name"><br>
+<label for="Course">Course</label>
+<select name="Course" id="Course">
+    <option value="Maths">Maths</option>
+    <option value="Physics">Physics</option>
+    <option value="English">English</option>
+</select><br>
+<label for="Assignment">Assignment</label>
+<input type="text" name="Assignment" id="Assignment" placeholder="Assignment 50%" min="0" max="50%"><br>
+<label for="Final">Final</label>
+<input type="text" name="Final" id="Final" placeholder="Final 30%" min="0" max="30%"><br>
+<label for="Test">Test</label>
+<input type="text" name="Test" id="Test" placeholder="Test 20%" min="0" max="20%"><br>
+<button onclick="getvalue()">Grade Result</button><br>
+<button onclick="calculate()">Calculate</button><br>
+
+</body>
+</html>
+
+
+
+my line of code finds an HTML input field on your webpage, grabs whatever text or number the user typed into it, and saves that value inside a variable named studentId.
+Here is the breakdown of exactly what each part does:
+## 🔍 Part-by-Part Breakdown
+
+* const: Creates a variable to store data. Using const means the variable studentId cannot be reassigned to a completely different value later in the code.
+* studentId: This is simply the custom name you chose for your variable so you can reference it later.
+* =: The assignment operator. It takes whatever is on the right side and stores it inside the variable on the left side.
+* document: This represents your entire webpage. It is the entry point for JavaScript to talk to your HTML elements.
+* .getElementById("studentId"): A built-in browser function that searches your HTML file from top to bottom to find the specific element that matches id="studentId".
+* .value: This retrieves the actual text, characters, or numbers currently typed inside that specific input box at the exact moment the code runs.
+
+## 💡 Visual Example
+If your webpage has this input element:
+
+<input type="text" id="studentId" value="STU-1234">
+
+Running that line of JavaScript code is the equivalent of writing:
+
+const studentId = "STU-1234";
+
+Would you like to see how to use .value with drop-down menus (<select>), or do you want to learn how to clear the input value back to blank after a button click?
+

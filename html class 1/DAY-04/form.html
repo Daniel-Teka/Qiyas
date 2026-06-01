@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--meta http-equiv="refresh" content="1"-->
+    <style>
+        .main {
+            color: #000;
+            background-color: rgb(58, 148, 148);
+            
+            transform:translate(50%,50%);
+            position:static;
+            /**top: 50%;*/
+            left: -50%;
+            width: 50%;
+            bottom: -50%;
+            
+        }
+        h3 {
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+        input {
+            width: 80%;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            width: 100px;
+            height: 50px;
+            border: 1px solid rgb(58, 148, 148);
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px rgb(58, 148, 148);
+        }
+    </style>
+</head>
+<body>
+   
+    <!--<form action="submit.php" method="post">-->
+
+
+
+
+
+
+    <div class="main">
+        <div>
+            <h3>Student Registratio Form</h3>
+        </div>
+
+        <div>
+            <form action="#" method="post" style="font-size: 20px; text-align: ;">
+<tr>
+    <td><label for="">Name:</label></td>
+    <td> <input type="text" placeholder="Name" required></imput><br></td>
+</tr>
+        <label for="">Phone Number</label>
+        <input type="number" placeholder="phone number" required min="900000000"><br>
+        <label for="">Email</label>
+        <input type="email" placeholder="your email"><br>
+        <label for="">birth:</label>
+        <input type="date" placeholder="Birth" required min="04/30/2027">Age</imput><br>
+        <label for="" >Age:</label>
+        <input type="number" required placeholder="10-50" min="10" max="50"><br>
+
+        <label for="">username</label>
+        <input type="text" name="username" id=""><br>
+        <label for="password">password</label>
+        <input type="password" placeholder="password"><br>
+
+        <p>Language</p>
+        <input type="checkbox" name="Language" id="" placeholder="Language" value="English">English<br>
+        <input type="checkbox" name="Language" id="" placeholder="Language" value="Dutch">Dutch<br>
+        <input type="checkbox" name="Language" id="" placeholder="Language" value="Amharic">Amharic<br>
+        <input type="checkbox" name="Language" id="" placeholder="Language" value="Arebic">Arebic<br>
+        <p>Gender</p>
+        <input type="radio" name="Gender">
+        <label for="Male">Male</label>
+        <input type="radio" name="Gender">
+        <label for="Female">Female</label><br>
+        
+        <label for="">Select your Gender
+        <select name="" id="">
+            <option value="">Male</option>
+            <option value="">Female</option>
+        </label>
+        </select><br>
+
+        <button type="submit">Submit</button>
+    </form>
+        </div>
+    </div>
+</body>
+</html>
+

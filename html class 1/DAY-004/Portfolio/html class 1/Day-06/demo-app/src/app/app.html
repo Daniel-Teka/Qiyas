@@ -1,0 +1,54 @@
+<div style="padding: 20px;">
+  <h2>M03: Student Grade Book</h2>
+
+  <!-- Task 4: Hide/Show Columns -->
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+    <strong>Show/Hide Columns:</strong>
+    <input type="checkbox" [(ngModel)]="showName"> Name
+    <input type="checkbox" [(ngModel)]="showSubject"> Subject
+    <input type="checkbox" [(ngModel)]="showGrade"> Grade
+  </div>
+
+  <!-- Task 2: Add New Students -->
+  <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+    <strong>Add New Student:</strong>
+    <input type="text" [(ngModel)]="newName" placeholder="Name">
+    <input type="text" [(ngModel)]="newSubject" placeholder="Subject">
+    <input type="number" [(ngModel)]="newGrade" placeholder="Grade">
+    <button (click)="addStudent()">Add Student</button>
+  </div>
+
+  <!-- Task 1: Display Table -->
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th *ngIf="showName">Name</th>
+        <th *ngIf="showSubject">Subject</th>
+        <th *ngIf="showGrade">Grade</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students; let i = index">
+        <td *ngIf="showName">
+          <span *ngIf="!s.editMode">{{s.name}}</span>
+          <input *ngIf="s.editMode" [(ngModel)]="s.name">
+        </td>
+        <td *ngIf="showSubject">
+          <span *ngIf="!s.editMode">{{s.subject}}</span>
+          <input *ngIf="s.editMode" [(ngModel)]="s.subject">
+        </td>
+        <td *ngIf="showGrade">
+          <span *ngIf="!s.editMode">{{s.grade}}</span>
+          <input *ngIf="s.editMode" type="number" [(ngModel)]="s.grade">
+        </td>
+        <td>
+          <button (click)="s.editMode = !s.editMode">
+            {{ s.editMode ? 'Save' : 'Edit' }}
+          </button>
+          <button (click)="deleteStudent(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

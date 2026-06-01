@@ -1,0 +1,55 @@
+let x, y;
+
+x = document.getElementById("demo");
+x.innerText = "Todo List App";
+let num1 = document.getElementById("num1").value;
+
+let operator = document.getElementById("operator");
+let num2 = document.getElementById("num2");
+function getValue() {
+  const num1 = document.getElementById("num1").value;
+  const operator = document.getElementById("operator").value;
+  const num2 = document.getElementById("num3").value;
+  const result = document.getElementById("result");
+  let history = [];
+  let result1 = 0;
+  // console.log("out side the condition")
+  if (!num1 || !num2 || !operator) {
+    //console.log("inside the condition")
+    result1 = "Num1, Num2 and Operator should not empty";
+    result.innerText = result1;
+    return;
+  }
+  if (operator == "/") {
+    result1 = Number(num1) / Number(num2);
+  } else if (operator == "+") {
+    result1 = Number(num1) + Number(num2);
+  } else if (operator == "-") {
+    result1 = Number(num1) - Number(num2);
+  } else if (operator == "*") {
+    result1 = Number(num1) * Number(num2);
+  } else {
+    result1 = "Invalid Operator";
+  }
+
+  result.innerText = result1;
+
+  history.push({
+    num1: num1,
+    num2: num2,
+    operator: operator,
+    result: result1,
+  });
+  let ul = document.createElement("ul");
+  for (let i = 0; i < history.length; i++) {
+    const element = history[i];
+    const node = document.createElement("li");
+    const textnode = document.createTextNode(
+      element.num1 + element.operator + element.num2 + " =" + element.result,
+    );
+    node.appendChild(textnode);
+    document.getElementById("ul").appendChild(node);
+  }
+}
+
+console.log(num1);

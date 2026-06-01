@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }  
+
+        for (let i = 0; i < 30; i++) {
+            if (i === 15) {
+                break;// terminate the loop when i is 15
+            }
+            console.log(i);
+        }
+
+        for (let i = 0; i < 30; i++) {
+            if (i === 15) {
+                continue;// skip 15
+            }
+            console.log(i);
+        }
+
+
+//function call
+
+        const multiply = (a, b) => {
+            return a * b;
+        }
+        console.log(multiply(5, 10));//result is 50
+
+        *
+       // arra  function
+         const numbers = [1, 2, 3, 4, 5];
+            const squaredNumbers = numbers.map(num => num * num);
+            console.log(squaredNumbers);//result is [1, 4, 9, 16, 25]
+        *    
+
+       //arrow function
+       const add = (a, b) => a + b;
+       console.log(add(5, 10));//result is 15
+
+       // object function
+       const person = {
+        name: 'John',
+        age: 30,
+        greet: function() {
+            console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+        }
+       };   
+
+         person.greet();//result is Hello, my name is John and I am 30 years old.
+         // arry map function
+         const numbers = [1, 2, 3, 4, 5];
+            const squaredNumbers = numbers.map(num => num * num);
+            console.log(squaredNumbers);//result is [1, 4, 9, 16, 25]
+        *
+       // arry filter function
+       const numbers = [1, 2, 3, 4, 5];
+       const evenNumbers = numbers.filter(num => num % 2 === 0);
+       console.log(evenNumbers);//result is [2, 4]
+       
+       // distruction
+       const person = {
+        name: 'John',
+        age: 30,
+        city: 'New York'
+       };   
+       *
+       console.log(person.name);//result is John
+       const { name, age } = person;
+         console.log(name, age);//result is John 30
+*
+         const numbers = [1, 2, 3, 4, 5];
+         let even = numbers.filter(num => num % 2 === 0).length > 0;
+         const evenNumbers = numbers.filter(num => num % 2 === 0);
+         if(even){
+            console.log(evenNumbers);//result is [2, 4] 
+         }else{
+                console.log("no even numbers found");
+            }
+
+            *
+
+           let x = 10;
+           if (x%2 === 0) {
+            console.log("x is even");
+              } else {
+                console.log("x is odd");
+                };
+
+                *
+
+               //destructuring
+               const user = {
+                name: 'Alice',
+                age: 25,
+                city: 'New York'
+               };
+               const { name, age } = user;
+               console.log(name, age);//result is Alice 25
+
+               *
+
+              //templete literal
+              const name = 'Alice';
+                const age = 25;
+                const message = `My name is ${name} and I am ${age} years old.`;
+                console.log(message);//result is My name is Alice and I am 25 years old.
+
+                * //spresad operator
+               const arr1 = [1, 2, 3];
+                const arr2 = [4, 5, 6];
+                const arr3 = [...arr1, ...arr2];
+                console.log(arr3);//result is [1, 2, 3, 4, 5, 6]
+
+                //dom manipulation
+                const div = document.createElement('div');
+                div.textContent = 'Hello, World!';
+                document.body.appendChild(div);
+
+                // event listener
+                const button = document.createElement('button');
+                button.textContent = 'Click me!';
+                button.addEventListener('click', () => {
+                    console.log('Button clicked!');
+                });
+                document.body.appendChild(button);
+
+
+
+
+                button.addEventListener('click', function() {
+                    console.log('Button clicked!');
+                });
+/*
+                document.getElementById('myButton').addEventListener('click', function() {
+                    console.log('Button clicked!');
+                });
+*
+// mouse hover button
+                const myButton = document.getElementById('myButton');
+                myButton.addEventListener('mouseover', function() {
+                    console.log('Mouse is over the button!');
+                });
+
+                *
+               //mouse out button
+                const myButton = document.getElementById('myButton');
+                myButton.addEventListener('mouseout', function() {
+                    console.log('Mouse is out of the button!');
+                });
+*
+                // keydown event
+                document.addEventListener('keydown', function(event) {
+                    console.log(`Key pressed: ${event.key}`);
+                });//result is Key pressed: (the key you pressed)
+
+// imput field value
+                const inputField = document.getElementById('myInput');
+                inputField.addEventListener('input', function() {
+                    console.log(`Input value: ${inputField.value}`);
+                });//result is Input value: (the current value of the input field)  
+*
+
+// imput field value
+ const result = document.getElementById('result');
+                const inputField = document.getElementById('myInput');
+                inputField.addEventListener('input', function() {
+                    result.textContent = `Input value: ${inputField.value}`;
+                });//result is Input value: (the current value of the input field)
+                *
+
+
+               // input event.
+                const result = document.getElementById('result');
+                const inputField = document.getElementById('myInput');
+                inputField.addEventListener('input', function() {
+                    result.textContent = `Input value: ${inputField.value}`;
+                });//result is Input value: (the current value of the input field)
+*/
+
+// show again what we type in the input field
+                const result = document.getElementById('result');
+                const inputField = document.getElementById('myInput');
+                inputField.addEventListener('input', function() {
+                    result.textContent = `Input value: ${inputField.value}`;
+                });//result is Input value: (the current value of the input field)  
+
+                //react related js code
+                const myButton = document.getElementById('myButton');  
+
+                myButton.addEventListener('click', function() {
+                    console.log('Button clicked!');
+                });
+                const user =['tom', 'jerry', 'spike'];
+                user.map(name => console.log(name));//result is tom, jerry, spike
+
+</script>
+<input type="text" id="myInput" placeholder="Type something...">
+<p id="result"></p>
+
+<li>{user}</li>
+
+<button id="myButton">Click me!</button>    
+
+</body>
+</html>

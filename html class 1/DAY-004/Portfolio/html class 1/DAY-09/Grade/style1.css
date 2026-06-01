@@ -1,0 +1,92 @@
+/* Center the entire application on the screen */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Page Heading */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Style inputs, select dropdown, and buttons uniformly */
+input, select, button {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px;
+  margin-bottom: 15px; /* Replaces the need for <br> tags */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+  display: block; /* Forces elements onto new lines cleanly */
+}
+
+/* Light highlight when clicking inside inputs */
+input:focus, select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Style the Calculate button */
+button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+#historyList {
+  list-style: none; /* Removes the default dots/bullets */
+  padding: 0;
+  margin: 15px 0;
+  width: 100%;
+  max-width: 320px;
+}
+
+#historyList li {
+  background-color: #ffffff;
+  padding: 10px 12px;
+  margin-bottom: 8px; /* Adds space between each history item */
+  border-radius: 6px;
+  border-left: 4px solid #2ecc71; /* Accent stripe on the left edge */
+  font-size: 13px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+
+/* Style the output result block */
+#result {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-left: 5px solid #3498db;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #34495e;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-line; /* Essential to show line breaks from JavaScript */
+}

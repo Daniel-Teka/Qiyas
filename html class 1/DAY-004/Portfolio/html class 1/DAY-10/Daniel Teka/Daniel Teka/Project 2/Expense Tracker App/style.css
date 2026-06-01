@@ -1,0 +1,286 @@
+/* Custom CSS Reset & Variable Tokens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --app-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-bg: #ffffff;
+    --primary-purple: #5046e5;
+    --primary-purple-hover: #4338ca;
+    --green-success: #10b981;
+    --green-light: #ecfdf5;
+    --red-danger: #ef4444;
+    --red-light: #fef2f2;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border-light: #e2e8f0;
+}
+
+body {
+    background: var(--app-bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 24px 16px;      
+    overflow-y: auto;        /* Page-level vertical scroll */
+}
+
+/* Master Layout Container Card */
+.tracker-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 460px;
+    padding: 1.75rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;    
+}
+
+.tracker-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+.tracker-header h1 {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+/* Balance Component — Horizontal Scroll for Giant Balances */
+.balance-box {
+    width: 100%;
+    overflow: hidden;
+}
+
+.balance-box h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+#total-balance {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    display: block;
+    line-height: 1.2;
+    white-space: nowrap;      
+    overflow-x: auto;          /* Allows horizontal swipe on huge total balance numbers */
+    scrollbar-width: none;     /* Hides annoying scrollbars on Firefox */
+}
+#total-balance::-webkit-scrollbar {
+    display: none;             /* Hides annoying scrollbars on Chrome/Safari/WebViews */
+}
+
+/* Sub-panel Summary Layout Block — Horizontal Scroll for Card Amounts */
+.summary-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.summary-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 0.85rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+.summary-card h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.summary-card p {
+    font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;      
+    overflow-x: auto;          /* Allows horizontal swipe on giant summary cards numbers */
+    scrollbar-width: none;
+}
+.summary-card p::-webkit-scrollbar {
+    display: none;
+}
+
+.summary-card.income p { color: var(--green-success); }
+.summary-card.expense p { color: var(--red-danger); }
+
+/* Form Control Structure Layout Blocks */
+.transaction-form-section, .history-section {
+    width: 100%;
+}
+
+.transaction-form-section h3, .history-section h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.form-control {
+    margin-bottom: 0.85rem;
+}
+
+.form-control label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(80, 70, 229, 0.1);
+}
+
+/* Action Type Selector Toggle Group */
+.type-toggle-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.toggle-btn {
+    padding: 0.6rem;
+    border: 1px solid var(--border-light);
+    background: #ffffff;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn#type-income.active {
+    background-color: var(--green-light);
+    border-color: var(--green-success);
+    color: var(--green-success);
+}
+
+.toggle-btn#type-expense.active {
+    background-color: var(--red-light);
+    border-color: var(--red-danger);
+    color: var(--red-danger);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-purple);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover { background-color: var(--primary-purple-hover); }
+
+/* History Feed Container */
+.history-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 2px;
+}
+
+/* Individual Ledger Rows — Made safe with selective inner-element scrolling */
+.history-item {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    padding: 0.75rem 0.85rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;       
+    overflow: hidden; 
+    animation: popIn 0.2s ease-out;
+}
+
+/* Description Text Horizontal Scroll Zone */
+.history-item .tx-title {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    white-space: nowrap;
+    overflow-x: auto;          /* Enables scrolling for super long task descriptions */
+    flex: 1;         
+    min-width: 0;    
+    scrollbar-width: none;
+}
+.history-item .tx-title::-webkit-scrollbar {
+    display: none;
+}
+
+/* Number Value Horizontal Scroll Zone */
+.history-item .tx-val {
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-align: right;
+    white-space: nowrap;     
+    overflow-x: auto;          /* Enables scrolling for crazy multi-digit values */
+    max-width: 55%;          
+    flex-shrink: 0;          
+    scrollbar-width: none;
+}
+.history-item .tx-val::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dynamic side accent borders */
+.history-item.inc-type { border-right: 4px solid var(--green-success); }
+.history-item.inc-type .tx-val { color: var(--green-success); }
+
+.history-item.exp-type { border-right: 4px solid var(--red-danger); }
+.history-item.exp-type .tx-val { color: var(--red-danger); }
+
+.empty-ledger {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 1rem 0;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
