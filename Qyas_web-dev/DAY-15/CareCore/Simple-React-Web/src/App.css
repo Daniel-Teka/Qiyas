@@ -115,3 +115,72 @@ body {
   color: var(--text-muted);
   background: rgba(255, 255, 255, 0.7);
 }
+
+/* Grid Layout */
+.medical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Card Styling */
+.medical-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.medical-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background: #f8fafc;
+  padding: 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.card-header h3 {
+  color: #0284c7;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.description {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.tip-box {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  background: #f1f5f9;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-style: italic;
+}
