@@ -43,7 +43,7 @@ function Nav({ set,currentPage }) {
 }
 
 // 3. Header Component
-function Header({ setPage,currentPage }) {
+function Header({ setPage, currentPage }) {
   return (
     <header className="header">
       <Logo />
