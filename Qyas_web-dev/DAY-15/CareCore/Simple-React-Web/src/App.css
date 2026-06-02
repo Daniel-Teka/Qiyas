@@ -6,6 +6,7 @@
   --text-muted: #64748b;
   --card-bg: rgba(255, 255, 255, 0.85);
   --border-radius: 16px;
+  --border-light: rgba(226, 232, 240, 0.8);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -23,21 +24,16 @@ body {
   line-height: 1.6;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
+/* --- Navigation Header --- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 2rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -49,12 +45,6 @@ body {
   gap: 0.75rem;
   font-size: 1.4rem;
   font-weight: 700;
-}
-
-.logo-image {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
 }
 
 .nav-list {
@@ -81,82 +71,56 @@ body {
   background: rgba(2, 132, 199, 0.06);
 }
 
-/* THE FIXED SECTION */
 .nav-list button.active {
   background: var(--primary-color);
   color: white;
   box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-.app-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.card {
-  background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  padding: 3rem 2.5rem;
-  border-radius: var(--border-radius);
-  max-width: 540px;
-  width: 100%;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+/* --- Services Layout --- */
+.services-header {
   text-align: center;
+  margin: 40px auto 20px auto;
+  padding: 0 20px;
 }
 
-.app-footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.7);
+.services-header h2 {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
-/* Grid Layout */
 .medical-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 24px;
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 
-.services-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* Card Styling */
+/* --- Medical Cards --- */
 .medical-card {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: var(--transition-smooth);
   overflow: hidden;
+  height: 100%;
 }
 
 .medical-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
 }
 
 .card-header {
   background: #f8fafc;
-  padding: 15px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.card-header h3 {
-  color: #0284c7;
-  font-size: 1.2rem;
-  margin: 0;
+  padding: 18px;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .card-body {
@@ -164,23 +128,20 @@ body {
   flex-grow: 1;
 }
 
-.description {
-  color: #475569;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
 .tip-box {
   background: #f0f9ff;
-  border-left: 4px solid #0ea5e9;
-  padding: 10px;
+  border-left: 4px solid var(--primary-color);
+  padding: 12px;
   font-size: 0.9rem;
+  border-radius: 0 4px 4px 0;
+  margin-top: 15px;
 }
 
 .card-footer {
-  background: #f1f5f9;
-  padding: 12px 20px;
+  background: #f8fafc;
+  padding: 15px 20px;
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-style: italic;
+  border-top: 1px solid #f1f5f9;
 }
