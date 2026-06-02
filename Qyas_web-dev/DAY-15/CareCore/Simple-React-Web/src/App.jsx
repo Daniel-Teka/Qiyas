@@ -17,7 +17,7 @@ function Logo() {
 }
 
 // 2. Navigation Component
-function Nav({ set,currentPage }) {
+function Nav({ setPage,currentPage }) {
   return (
     <nav>
       <ul className="nav-list">
