@@ -45,8 +45,8 @@ function Nav({ setPage,currentPage }) {
 // 3. Header Component
 function Header({ setPage, currentPage }) {
   return (
-    <header className="header">
-      <Logo />
+    <header className="header"> {/* header */}
+      <Logo /> {/* Include the Logo component in the header */}
       <Nav setPage={setPage} currentPage={currentPage} />
     </header>
   )
