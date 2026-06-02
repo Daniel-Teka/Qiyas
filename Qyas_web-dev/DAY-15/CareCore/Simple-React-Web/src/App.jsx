@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+
+// Import yuor logo asset from the local project
+import logoImg from './assets/logo.png';
+
+// 1. Logo Components (with custom setup)
+
 
 function App() {
   const [count, setCount] = useState(0)
