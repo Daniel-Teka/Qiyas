@@ -23,10 +23,4 @@ function App() {
       
       <div style={{ marginTop: '20px', padding: '20px', background: '#f4f4f4', borderRadius: '8px', maxWidth: '400px', margin: '20px auto' }}>
         <h3>Backend Connection Test:</h3>
-        <p style={{ fontSize: '1.2em', color: 'green', fontWeight: 'bold' }}>{message}</p>
-      </div>
-    </div>
-  )
-}
-
-export default App
+        <p style={{ fontSize: '1.2em', color: 'green', fontWeig
