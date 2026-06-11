@@ -1,0 +1,74 @@
+/* Layout and Container */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+div {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography */
+h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+/* List Formatting */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #fafbfc;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #0366d6;
+}
+
+/* Highlighting user names */
+li strong {
+  color: #0366d6;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Loading and Error States */
+p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  margin-top: 40px;
+}
+
+p[style*="color: red"] {
+  background-color: #ffeef0;
+  color: #d73a49 !important;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+}
