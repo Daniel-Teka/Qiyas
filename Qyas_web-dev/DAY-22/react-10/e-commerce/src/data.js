@@ -25,7 +25,7 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    name: "Canvas Backpack",
+    name: "Computer",
     category: "Bags",
     price: 85.0,
     description: "Durable backpack perfect for school or travel.",
@@ -33,7 +33,7 @@ export const PRODUCTS = [
   },
   {
     id: 5,
-    name: "Canvas Backpack",
+    name: "Computer",
     category: "Bags",
     price: 85.0,
     description: "Durable backpack perfect for school or travel.",
@@ -41,7 +41,7 @@ export const PRODUCTS = [
   },
   {
     id: 6,
-    name: "Canvas Backpack",
+    name: "Laptop",
     category: "Bags",
     price: 85.0,
     description: "Durable backpack perfect for school or travel.",
@@ -49,7 +49,7 @@ export const PRODUCTS = [
   },
   {
     id: 7,
-    name: "Canvas Backpack",
+    name: "Laptop",
     category: "Bags",
     price: 85.0,
     description: "Durable backpack perfect for school or travel.",
