@@ -1,2 +1,2 @@
-# Portfolio
-Daniel Teka's Portfolio
+# Qiyas
+Daniel Teka's Qiyas
