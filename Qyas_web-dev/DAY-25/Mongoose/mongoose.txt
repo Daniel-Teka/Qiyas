@@ -1,0 +1,149 @@
+@Daniel-Teka ➜ .../Portfolio/Qyas_web-dev/DAY-25/Backend (main) $ mkdir myApp
+@Daniel-Teka ➜ .../Portfolio/Qyas_web-dev/DAY-25/Backend (main) $ cd Myapp
+bash: cd: Myapp: No such file or directory
+@Daniel-Teka ➜ .../Portfolio/Qyas_web-dev/DAY-25/Backend (main) $ cd myApp
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm init -y
+Wrote to /workspaces/Portfolio/Qyas_web-dev/DAY-25/Backend/myApp/package.json:
+
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm init -y
+Wrote to /workspaces/Portfolio/Qyas_web-dev/DAY-25/Backend/myApp/package.json:
+
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm install express mongoose
+
+added 84 packages, and audited 85 packages in 8s
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm install --save-dev nodemon
+
+added 26 packages, and audited 111 packages in 3s
+
+30 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm run dev
+
+> myapp@1.0.0 dev
+> nodemon index.js
+
+[nodemon] 3.1.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js index.js`
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '/workspaces/Portfolio/Qyas_web-dev/DAY-25/Backend/myApp/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.14.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index.js index.js`
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '/workspaces/Portfolio/Qyas_web-dev/DAY-25/Backend/myApp/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.14.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node index.js index.js`
+node:internal/modules/cjs/loader:1459
+  throw err;
+  ^
+
+Error: Cannot find module '/workspaces/Portfolio/Qyas_web-dev/DAY-25/Backend/myApp/index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.14.0
+[nodemon] app crashed - waiting for file changes before starting...
+^C
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm run dev
+npm error Missing script: "dev"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /home/codespace/.npm/_logs/2026-06-23T07_52_56_055Z-debug-0.log
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ touch index.js
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm run dev
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Unexpected non-whitespace character after JSON at position 370 (line 22 column 1) while parsing near "...\": \"^3.1.14\"\n  }\n}\n\n\"scripts\": {\n  \"star..."
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: /home/codespace/.npm/_logs/2026-06-23T07_55_03_583Z-debug-0.log
+@Daniel-Teka ➜ .../Qyas_web-dev/DAY-25/Backend/myApp (main) $ npm run dev
+
+> myapp@1.0.0 dev
+> nodemon index.js
+
+[nodemon] 3.1.14
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+Server is listening on port 3000
