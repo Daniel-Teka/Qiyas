@@ -5,10 +5,11 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Contact from "./pages/Contact";
-import Cart from "./pages/Cart";
+
+import Home from "./Pages/Home.jsx";
+import Products from "./Pages/Products.jsx";
+import Contact from "./Pages/Contact.jsx";
+import Cart from "./Pages/Cart.jsx";
 
 function App() {
   return (
