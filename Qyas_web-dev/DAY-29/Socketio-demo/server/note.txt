@@ -1,1 +1,5 @@
 packej jason
+
+srt
+ npm install express socket.io cors
+ @Daniel-Teka ➜ .../Qyas_web-dev/DAY-29/Socketio-demo/client (main) $ npm install socket.io-client
