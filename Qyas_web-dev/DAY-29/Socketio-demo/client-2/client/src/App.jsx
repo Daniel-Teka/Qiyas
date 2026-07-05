@@ -1,122 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
 
-function App() {
-  const [count, setCount] = useState(0)
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: { origin: "*" } // Adjust for production security
+});
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+// Object to map custom User IDs to active Socket IDs
+// Example structure: { "user_123": "socket_ABC789xyz" }
+const connectedUsers = {};
 
-      <div className="ticks"></div>
+io.on('connection', (socket) => {
+    console.log(`A user connected: ${socket.id}`);
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+    // 1. REGISTER USER: Triggered when a client logs in/identifies themselves
+    socket.on('register_user', (userId) => {
+        connectedUsers[userId] = socket.id;
+        console.log(`User registered: Custom ID "${userId}" mapped to Socket "${socket.id}"`);
+    });
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+    // 2. PRIVATE MESSAGING: Listen for a message targeted at a specific user
+    socket.on('private_message', (data) => {
+        const { targetUserId, message, senderId } = data;
+        
+        // Find the active socket ID of the recipient
+        const recipientSocketId = connectedUsers[targetUserId];
 
-export default App
+        if (recipientSocketId) {
+            // Send the payload strictly to the recipient's target socket channel
+            io.to(recipientSocketId).emit('receive_private_message', {
+                senderId: senderId,
+                message: message
+            });
+            console.log(`Message sent from ${senderId} to ${targetUserId}`);
+        } else {
+            // Fallback error event if the destination user is offline
+            socket.emit('error_message', { error: `User ${targetUserId} is offline.` });
+        }
+    });
+
+    // 3. CLEANUP: Clear mappings when a connection terminates
+    socket.on('disconnect', () => {
+        // Find and delete the key belonging to the disconnected socket
+        for (const userId in connectedUsers) {
+            if (connectedUsers[userId] === socket.id) {
+                delete connectedUsers[userId];
+                console.log(`User ${userId} disconnected. Cleared tracking.`);
+                break;
+            }
+        }
+    });
+});
+
+// Run server
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Socket.io server running on http://localhost:${PORT}`);
+});
