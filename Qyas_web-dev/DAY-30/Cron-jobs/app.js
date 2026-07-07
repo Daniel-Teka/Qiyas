@@ -16,4 +16,4 @@ cron.schedule("* * * * *", () => {
   });
 });
 
-console.log("ክሮን ጆብ ጀምሯል")፤
+console.log("ክሮን ጆብ ጀምሯል");
