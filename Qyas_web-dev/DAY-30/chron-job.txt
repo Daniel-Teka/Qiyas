@@ -1,1 +1,8 @@
 executing perodically
+npm init -y "back end"
+
+*/2 *        *     
+
+import
+
+ls fs file system
