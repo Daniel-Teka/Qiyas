@@ -1,0 +1,15 @@
+
+#!/usr/bin/env bash
+# "vibe coding" - small script to set a relaxed coding vibe
+
+echo
+echo "🎧 Vibe Coding — get in the zone"
+echo "-------------------------------"
+echo "Set your playlist, sip some tea/coffee, and focus."
+echo
+echo "Tips:"
+echo "  - Use a Pomodoro (25m work / 5m break)"
+echo "  - Disable notifications"
+echo "  - Keep a simple todo list"
+echo
+exit 0
