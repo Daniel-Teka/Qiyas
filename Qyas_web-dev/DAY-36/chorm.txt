@@ -1,0 +1,1 @@
+flutter RUN -D CHROME
