@@ -1,23 +1,29 @@
 name: currency_converter_app
-description: "A production-ready responsive Utility Suite featuring Currency Conversion, Unit Conversion, and Country/City Lookup with persistent favorites and adaptive M3 design."
-publish_to: 'none'
+description: A Flutter Global Utility Suite
+publish_to: "none"
+
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.7.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.1.2
-  shared_preferences: ^2.2.2
-  http: ^1.2.0
-  cupertino_icons: ^1.0.6
+
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.5+1
+  http: ^1.2.2
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/

@@ -422,8 +422,9 @@ class UnitProvider extends ChangeNotifier {
   double _convertTemperature(double val, String from, String to) {
     if (from == to) return val;
     double celsius;
-    if (from == 'Celsius') celsius = val;
-    else if (from == 'Fahrenheit') celsius = (val - 32) * 5 / 9;
+    if (from == 'Celsius') {
+      celsius = val;
+    } else if (from == 'Fahrenheit') celsius = (val - 32) * 5 / 9;
     else celsius = val - 273.15; // Kelvin
 
     if (to == 'Celsius') return celsius;
