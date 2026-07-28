@@ -59,7 +59,7 @@ class CurrencyConverterApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.indigo,
         brightness: Brightness.light,
-        scaffoldBackgroundColor: const Color(0xFFAFAFA),
+        scaffoldBackgroundColor: const Color(0xFFFAFAFA),
         cardTheme: CardTheme(
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -587,13 +587,13 @@ class CurrencyConverterView extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
-      builder: (_) => const DraggableScrollableSheet(
+      builder: (_) => DraggableScrollableSheet(
         initialChildSize: 0.6,
         maxChildSize: 0.9,
         expand: false,
         builder: (context, controller) => SingleChildScrollView(
           controller: controller,
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.all(24.0),
             child: CurrencyTargetSelector(isModal: true),
           ),
@@ -765,7 +765,7 @@ class CurrencyConverterView extends StatelessWidget {
                       );
                     },
                   ),
-                  const SizedBox(height: 60), // Extra space for FAB
+                  const SizedBox(height: 60),
                 ],
               ),
             ),
@@ -832,13 +832,13 @@ class UnitConverterView extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
-      builder: (_) => const DraggableScrollableSheet(
+      builder: (_) => DraggableScrollableSheet(
         initialChildSize: 0.6,
         maxChildSize: 0.85,
         expand: false,
         builder: (context, controller) => SingleChildScrollView(
           controller: controller,
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.all(24.0),
             child: UnitTargetSelector(isModal: true),
           ),
@@ -1136,7 +1136,7 @@ class LocationLookupView extends StatelessWidget {
                             final isFav = favs.isFavorite(favId);
 
                             return ListTile(
-                              leading: const Icon(Icons.city),
+                              leading: const Icon(Icons.location_city),
                               title: Text(city),
                               trailing: IconButton(
                                 icon: Icon(isFav ? Icons.favorite : Icons.favorite_border, color: isFav ? Colors.red : null),
@@ -1293,7 +1293,6 @@ class FavoritesView extends StatelessWidget {
               onPressed: () => favs.removeFavorite(item.id),
             ),
             onTap: () {
-              // Apply preset parameters back into provider state on selection
               if (item.type == FavoriteType.currency) {
                 final base = item.data['base'] as String;
                 final amount = (item.data['amount'] as num).toDouble();
