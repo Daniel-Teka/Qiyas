@@ -1,0 +1,6 @@
+{
+  "name": "GeoConvert Flutter Architecture",
+  "description": "Production-ready Flutter & Material 3 application featuring Country & City Lookup, One-to-Many Currency Converter, and One-to-Many Unit Converter with live interactive preview and Dart source inspection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
