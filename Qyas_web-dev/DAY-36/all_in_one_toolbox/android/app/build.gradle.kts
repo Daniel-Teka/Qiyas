@@ -6,9 +6,9 @@ plugins {
 }
 
 android {
-    namespace = "com.example.all_in_one_toolbox"
+    namespace = "com.example.currency_converter_app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
